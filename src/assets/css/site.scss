@@ -1,0 +1,459 @@
+body {
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  letter-spacing: 0.02em;
+  width: 100%;
+  min-width: 320px;
+  max-width: 1920px;
+}
+.container {
+  max-width: 1357px;
+  // min-width: 320px;
+  // width: 100%;
+}
+
+header { 
+  background: #2E2E2E;
+  // max-height: 56px;
+  padding: 20px 0;
+  .container .row {
+    align-items: center;
+  }
+  .header__nav-left ul {
+    display: flex;
+    justify-content: flex-start;
+    li a {
+      color: #fff;
+      font-size: 14px;
+      margin-right: 36px;
+    }
+  }
+  .header__nav-right ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    li a {
+      color: #fff;
+      font-size: 14px;
+      margin-left: 36px;
+    }
+  }
+}
+
+
+// DROPDOWN
+.select {
+  width: 250px;
+  margin: 0 auto;
+  position: relative;
+  color: #2E2E2E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.select__title {
+  cursor: pointer;
+}
+.select.open .select__wrap {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.select__wrap.activeCountry .select__body,
+.select__wrap.activeCurrency .select__body-currency {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.select__header:first-child{
+  margin-bottom: 30px;
+}
+.select__header-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding-top: 34px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #E2E2E2;
+}
+.select__icon {
+  width: 20px;
+}
+.select__current,
+.select__current-currency {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+  // padding: 8px;
+}
+.select__wrap {
+  position: absolute;
+  top: 45px;
+  // margin-top: 10px;
+  padding: 30px;
+  width: 318px;
+  background: #FFFFFF;
+  color: #2E2E2E;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0px 9px 30px 0px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.5s;
+}
+.select__body,
+.select__body-currency {
+  position: absolute;
+  left: 25px;
+  right: 0;
+  top: 110px;
+  // display: none;
+  background: #fff;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.5s;
+}
+.select__body-currency {
+  top: 230px;
+}
+.select__item,
+.select__item-currency {
+  line-height: 24px;
+  padding: 8px;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  &:hover {
+    background: #ccc;
+  }
+} 
+
+.arrow {
+  position: relative;
+  height: 5px;
+  width: 5px;
+  
+}
+.arrow::before, .arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 0.15rem;
+  height: 100%;
+  transition: all 0.5s;
+}
+.arrow::before {
+  // left: -5px;
+  left: -1px;
+  transform: rotate(45deg);
+  background-color: #fff;
+}
+.arrow::after {
+  // left: 5px;
+  left: 1px;
+  transform: rotate(-45deg);
+  background-color: #fff;
+}
+.open .arrow::before {
+  left: -1px;
+  transform: rotate(-45deg);
+}
+.open .arrow::after {
+  // left: 5px;
+  left: 1px;
+  transform: rotate(45deg);
+}
+
+.arrow-dark {
+  position: relative;
+  height: 5px;
+  width: 5px;
+  
+}
+.arrow-dark::before, .arrow-dark::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 0.15rem;
+  height: 100%;
+  transition: all 0.5s;
+}
+.arrow-dark::before {
+  // left: -5px;
+  left: -1px;
+  transform: rotate(45deg);
+  background-color: #000;
+}
+.arrow-dark::after {
+  // left: 5px;
+  left: 1px;
+  transform: rotate(-45deg);
+  background-color: #000;
+}
+.open .arrow-dark::before {
+  left: -1px;
+  transform: rotate(-45deg);
+}
+.open .arrow-dark::after {
+  // left: 5px;
+  left: 1px;
+  transform: rotate(45deg);
+}
+
+//header options
+.header-options .container .row {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+.header-options__nav ul {
+  display: flex;
+  justify-content: flex-end;
+  li {
+    margin-left: 35px;
+  }
+}
+.header-options__search input {
+  width: 100%;
+  height: 52px;
+  border-radius: 10px;
+  border: 1px solid #DFDFDF;
+  background: #F8F8F8;
+  padding: 25px 15px;
+  font-size: 16px;
+  color: #979797;
+}
+
+
+//banner
+.banner {
+  // background-image: url(/img/home/slide.svg);
+  background-image: url(../img/home/slide.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  a {
+    width: 100%;
+  }
+}
+.banner .container {
+  position: relative;
+}
+.banner h2 {
+  text-align: center;
+  font-size: calc(30px + 50 * (100vw / 1920) );
+  line-height: calc(50px + 46 * (100vw / 1920));
+  color: #fff;
+  font-weight: normal;
+  span {
+    color: #FF9B30;
+  }
+}
+
+// catalog
+.products__nav {
+  margin-bottom: 40px;
+  .col-lg-12 .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.products__title {
+  font-size: 22px;
+  line-height: 26px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.products__view {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  a {
+    color: #979797;
+  }
+}
+
+
+
+// pagination
+.pagination {
+  margin-bottom: 80px;
+  .container {
+    display: flex;
+    justify-content: flex-end;
+    p {
+      width: 34px;
+      height: 34px;
+      background: #fff;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 17px;
+      text-align: center;
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin: 0 4px;
+      &.active {
+        background: #FF9B30;
+        color: #fff;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 17px;
+        text-align: center;
+      }
+    }
+    .pagination__first {
+      margin-right: 25px;
+    }
+    .pagination__last {
+      margin-left: 25px;
+    }
+  }
+}
+
+
+
+// slider
+/* Собственно сам слайдер */
+.slider{
+  position: relative;
+  margin: auto;
+  height: 300px;
+  margin-bottom: 15px;
+}
+/* Картинка мастабируется по отношению к родительскому элементу */
+.slider .item img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  border: none !important;
+  box-shadow: none !important;
+}
+/* Кнопки вперед и назад */
+.slider .prev, .slider .next {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  width: 36px;
+  height: 36px;
+  padding: 8px 14px;
+  border-radius: 100%;
+}
+.slider .next {
+  right: 20px;
+}
+.slider .prev {
+  left: 20px;
+}
+/* При наведении на кнопки добавляем фон кнопок */
+.slider .prev:hover,
+.slider .next:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+/* Заголовок слайда */
+.slideText {
+  position: absolute;
+  color: rgba(244, 198, 185, 1);
+  font-size: 35px;
+  /* Выравнивание текста по горизонтали и по вертикали*/
+  left: 20%;
+  top: 35%;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 31px;
+  &:last-child {
+    left: 60%;
+  }
+}
+.slideText__upper {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48px;
+  color: #FF9B30;
+  span {
+    font-size: 30px;
+    font-style: normal;
+    line-height: 36px;
+  }
+}
+.slideText__small {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+/* Кружочки */
+.slider-dots {
+  text-align: center;
+}
+.slider-dots_item{
+  cursor: pointer;
+  height: 8px;
+  width: 8px;
+  margin: 0 2px;
+  background-color: #FFEAD3;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active,
+.slider-dots_item:hover {
+  background-color: #FF9B30;
+}
+/* Анимация слайдов */
+.slider .item {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {
+      opacity: .4
+  }
+  to {
+      opacity: 1
+  }
+}
+@keyframes fade {
+  from {
+      opacity: .4
+  }
+  to {
+      opacity: 1
+  }
+}
+
+
+// title
+.title h2 {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 43px;
+}
+
+
+
